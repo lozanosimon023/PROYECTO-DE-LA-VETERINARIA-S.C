@@ -47,7 +47,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/AdminLTE-3.1.0/MenuAdministrador.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
@@ -91,49 +91,51 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/AdminLTE-3.1.0/Usuarios.html" class="nav-link ">
+                <a href="/AdminLTE-3.1.0/AdminUsuarios.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Usuarios</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/AdminLTE-3.1.0/Productos.html" class="nav-link">
+                <a href="/AdminLTE-3.1.0/AdminProductos.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Productos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/AdminLTE-3.1.0/Pedidos.html" class="nav-link">
+                <a href="/AdminLTE-3.1.0/AdminPedidos.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pedidos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/AdminLTE-3.1.0/Citas.html" class="nav-link">
+                <a href="/AdminLTE-3.1.0/AdminCitas.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Citas</p>
                 </a>
               </li>
+              <li class="nav-item">  <!---Perfil-->
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-chart-pie"></i>
+                  <p>
+                    Perfil
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="" class="nav-link" data-toggle="modal" data-target="#CerrarSesion">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Cerrar Sesión</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
             </ul>
-          </li>
-          <li class="nav-item">  <!---Perfil-->
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Perfil
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <li class="nav-item">
-              <a href="" class="nav-link" data-toggle="modal" data-target="#CerrarSesion">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Cerrar Sesión</p>
-              </a>
-            </li>
-            
-          </li>
           
-        </ul>
+          
+        </ul>         
+        
         
       </nav>
       <!-- /.sidebar-menu -->
@@ -141,25 +143,26 @@
     <!-- /.sidebar -->
   </aside>
   <!--Modal Cerrar Sesisón-->
-  <div class="modal fade" id="CerrarSesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">CONFIRMAR CIERRE DE SESIÓN</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ¿Estas seguro que desea Cerrar Sesión?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-info">Cerrar</button>
-        </div>
+  <!--Modal Cerrar Sesisón-->
+ <div class="modal fade" id="CerrarSesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CONFIRMAR CIERRE DE SESIÓN</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Estas seguro que desea Cerrar Sesión?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-info">Cerrar</button>
       </div>
     </div>
   </div>
+</div>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->

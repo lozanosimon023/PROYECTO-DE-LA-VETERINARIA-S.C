@@ -1,8 +1,7 @@
-function cargar(url) {
-  if ((menu = "")) var url = "tabla.php";
+function cargar(urlMenu) {
   $.ajax({
     type: "POST",
-    url: url,
+    url: urlMenu,
     data: {},
     success: function (datos) {
       $("#tabla").html(datos);

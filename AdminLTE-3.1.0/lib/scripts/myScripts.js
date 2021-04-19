@@ -1,10 +1,10 @@
-function cargar(UrlMenu) {
+function cargar(urlMenu) {
   $.ajax({
     type: "POST",
-    url: UrlMenu,
+    url: urlMenu,
     data: {},
     success: function (datos) {
-      $("#tabla").html(datos);
+      $("#qCarga").html(datos);
     },
   });
 }

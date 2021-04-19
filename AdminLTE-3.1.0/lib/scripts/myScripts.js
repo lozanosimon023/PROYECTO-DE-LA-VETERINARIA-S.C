@@ -1,7 +1,7 @@
-function cargar(urlMenu) {
+function cargar(menu) {
   $.ajax({
     type: "POST",
-    url: urlMenu,
+    url: menu,
     data: {},
     success: function (datos) {
       $("#tabla").html(datos);

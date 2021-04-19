@@ -83,7 +83,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active" onclick="cargar('AdminUsuarios.php');">
+                <a href="#" class="nav-link " onclick="cargar('AdminUsuarios.php');">
                   <i class="far fa-circle nav-icon "></i>
                   <p>Usuarios</p>
                 </a>
@@ -110,7 +110,7 @@
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-chart-pie"></i>
                   <p>
-                    Perfil
+                    PERFIL
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
@@ -142,7 +142,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0"></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

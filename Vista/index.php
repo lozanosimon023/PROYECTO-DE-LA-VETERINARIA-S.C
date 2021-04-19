@@ -738,7 +738,7 @@
                     </div>
                     <div class="form-group">
                       <div class="d-flex justify-content-center links mt-3 ">
-                        <a type="button"  class="btn d-block btn-primary col Entrar" href="/AdminLTE-3.1.0/MenuAdministrador.html">Entrar</a>
+                        <a type="button"  class="btn d-block btn-primary col Entrar" href="/AdminLTE-3.1.0/MenuAdministrador.php">Entrar</a>
                       </div>                   
                     </div>
                   </form>

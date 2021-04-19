@@ -9,33 +9,55 @@
               <input type="text" class="form-control" id="nombres" name="nombres">
             </div>
             <div class="col-4">
-              <label for="Apeliidos">Apeliidos</label>
-              <input type="text" class="form-control" id="apellidos" name="apellidos">
+              <label for="Edad">Edad</label>
+              <input type="text" class="form-control" id="apellidos" name="Edad">
             </div>
-            <div class="col-4">
-              <label for="CorreoElectronico">Correo Electronico</label>
-              <input type="text" class="form-control" id="apellidos" name="CorreoElectronico">
-            </div>
-
+            <div class="form-group col-md-4">
+                <label aria-placeholder="inputState">Sexo </label>
+                <select id="inputState" class="form-control">
+                <option selected></option>
+                <option>Hembra</option>
+                <option>Macho</option>
+                </select>
+             </div>
           </div>
           <div class="form-group row">
             <div class="col-4">
-              <label for="Edad">Edad</label>
+              <label for="NombreAcompañante">Nombre del acompañante</label>
               <input type="number" class="form-control" id="apellidos" name="Edad">
             </div>
-            <div class="col-4">
-              <label for="Telefono">Telefono</label>
-              <input type="number" class="form-control" id="dirección" name="telefono">
+            <div class="form-group col-md-4">
+                <label aria-placeholder="inputState">Tipo de Consulta </label>
+                <select id="inputState" class="form-control">
+                <option selected></option>
+                <option>Radiografia</option>
+                <option>Profilaxis</option>
+                <option>Vacunación</option>
+                <option>Ecografia</option>
+                </select>
+             </div>
+             <div class="col-4">
+              <label for="Correo">Correo</label>
+              <input type="text" class="form-control" id="Correo" name="Correo">
             </div>
-            <div class="col-4">
-              <label for="Telefono">Celular</label>
-              <input type="number" class="form-control" id="dirección" name="telefono">
-            </div>
-            <div>
-              <button type="button" class="btn btn-primary mt-3">Enviar</button>
-            </div>
-
           </div>
+          <div class="form-group row">
+            <div class="col-6">
+              <label for="Celular">Celular</label>
+              <input type="number" class="form-control" id="apellidos" name="celular">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="Fecha-Hora">Fecha-Hora</label>
+                <input type="datetime-local" class="form-control" id="Fecha-Hora" name="Fecha-Hora">
+             </div>
+          </div>
+           
+            <div>
+              <button type="button" class="btn btn-primary ">Enviar</button>
+            </div>
+           
+          </div>
+          
         </div>
       </div>
     </div>

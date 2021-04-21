@@ -1,3 +1,4 @@
+
 <section class="content">
   <div class="container-fluid">
     <div class="container m">
@@ -24,7 +25,7 @@
           <div class="form-group row">
             <div class="col-4">
               <label for="NombreAcompañante">Nombre del acompañante</label>
-              <input type="number" class="form-control" id="apellidos" name="Edad">
+              <input type="text" class="form-control" id="apellidos" name="Edad">
             </div>
             <div class="form-group col-md-4">
                 <label aria-placeholder="inputState">Tipo de Consulta </label>
@@ -66,11 +67,15 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Correo</th>
+            <th scope="col">Nombre del Paciente</th>
             <th scope="col">Edad</th>
-            <th scope="col">Telefono</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Nombre del Acompañante</th>
+            <th scope="col">Tipo de Consulta</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
             <th scope="col">Eliminar</th>
             <th scope="col">Modificar</th>
 
@@ -79,11 +84,15 @@
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Luis</td>
-            <td>Lopez</td>
+            <td>Paco</td>
+            <td>5 años</td>
+            <td>Macho</td>
+            <td>Luis Lopez</td>
+            <td>Radiografia</td>
             <td>Luislop25@gmail.com</td>
-            <td>19</td>
-            <td>300555518</td>
+            <td>3005515517</td>
+            <td>24/06/2021</td>
+            <td>8:00</td>
             <td>
               <button type="button" class="btn btn-danger">Eliminar</button>
             </td>
@@ -94,11 +103,15 @@
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td>Luisa</td>
-            <td>Mesa</td>
+            <td>Romeo</td>
+            <td>2 años</td>
+            <td>Macho</td>
+            <td>Luisa Mesa</td>
+            <td>Ecografia</td>
             <td>Lumesa@gmail.com</td>
-            <td>25</td>
-            <td>30055500</td>
+            <td>3005515517</td>
+            <td>29/04/2021</td>
+            <td>10:00</td>
             <td>
               <button type="button" class="btn btn-danger">Eliminar</button>
             </td>
@@ -108,39 +121,15 @@
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td>Margarita</td>
-            <td>Aquite</td>
-            <td>MargaritaAqu26@hotmail.com</td>
-            <td>59</td>
-            <td>30055500</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Jean</td>
-            <td>Rojas</td>
-            <td>JeanR146@gmail.com</td>
-            <td>18</td>
-            <td>30055566</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Mateo</td>
-            <td>Muñoz</td>
+            <td>Chiqui</td>
+            <td>6 años</td>
+            <td>Hembra</td>
+            <td>Mateo Muñoz</td>
+            <td>Vacunación</td>
             <td>Matm25@gmail.com</td>
-            <td>25</td>
-            <td>30055188</td>
+            <td>3005515517</td>
+            <td>11/01/2021</td>
+            <td>9:30</td>
             <td>
               <button type="button" class="btn btn-danger">Eliminar</button>
             </td>
@@ -150,11 +139,15 @@
           </tr>
           <tr>
             <th scope="row">4</th>
-            <td>Juliana</td>
-            <td>Toro</td>
-            <td>JuliTr16@hotmail.com</td>
-            <td>30</td>
-            <td>300551935</td>
+            <td>Valin</td>
+            <td>6 meses</td>
+            <td>Macho</td>
+            <td>Margarita Aquite</td>
+            <td>Urgencias</td>
+            <td>MargaritaAqu26@hotmail.com</td>
+            <td>3005515517</td>
+            <td>09/12/2021</td>
+            <td>10:30</td>
             <td>
               <button type="button" class="btn btn-danger">Eliminar</button>
             </td>
@@ -163,18 +156,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row">5</th>
-            <td>Andrez</td>
-            <td>Martinez</td>
-            <td>AndreMar@gmail.com</td>
-            <td>30</td>
-            <td>30055196</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
+         
           </tr>
         </tbody>
       </table>

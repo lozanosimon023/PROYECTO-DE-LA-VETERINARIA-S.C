@@ -19,15 +19,11 @@
 
           </div>
           <div class="form-group row">
-            <div class="col-4">
+            <div class="col-6">
               <label for="Edad">Edad</label>
               <input type="number" class="form-control" id="apellidos" name="Edad">
             </div>
-            <div class="col-4">
-              <label for="Telefono">Telefono</label>
-              <input type="number" class="form-control" id="dirección" name="telefono">
-            </div>
-            <div class="col-4">
+            <div class="col-6">
               <label for="Telefono">Celular</label>
               <input type="number" class="form-control" id="dirección" name="telefono">
             </div>
@@ -48,7 +44,7 @@
             <th scope="col">Apellido</th>
             <th scope="col">Correo</th>
             <th scope="col">Edad</th>
-            <th scope="col">Telefono</th>
+            <th scope="col">Celular</th>
             <th scope="col">Eliminar</th>
             <th scope="col">Modificar</th>
 

@@ -26,13 +26,17 @@
 
           </div>
           <div class="form-group row">
-            <div class="col-6">
+            <div class="col-4">
               <label for="Edad">Cantidad</label>
               <input type="number" class="form-control" id="apellidos" name="Edad">
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <label for="Telefono">Dirección</label>
               <input type="text" class="form-control" id="dirección" name="telefono">
+            </div>
+            <div class="col-4">
+              <label for="Telefono">Celular</label>
+              <input type="number" class="form-control" id="dirección" name="celular">
             </div>
             
             <div>
@@ -49,7 +53,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Tipo de Procutos</th>
+            <th scope="col">Tipo de Productos</th>
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Dirección</th>

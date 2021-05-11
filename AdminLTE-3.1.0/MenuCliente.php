@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script> -->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -33,8 +34,7 @@
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
-  </nav>
-  <!-- /.navbar -->
+
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -77,25 +77,27 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                ADMINISTRACIÓN
+                CLIENTE
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+              
+              </li>
               <li class="nav-item">
-                <a href="/AdminLTE-3.1.0/AdminProductos.html" class="nav-link">
+                <a href="#" class="nav-link" onclick="cargar('AdminProductos.php');">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Productos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/AdminLTE-3.1.0/AdminPedidos.html" class="nav-link">
+                <a href="#" class="nav-link" onclick="cargar('AdminPedidos.php');">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pedidos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/AdminLTE-3.1.0/AdminCitas.html" class="nav-link">
+                <a href="#" class="nav-link" onclick="cargar('AdminCitas.php');">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Citas</p>
                 </a>
@@ -104,7 +106,7 @@
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-chart-pie"></i>
                   <p>
-                    Perfil
+                    PERFIL
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
@@ -136,7 +138,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0"></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -148,14 +150,14 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-
+    <!--AQUI VA EL CONTENIDO PRINCIPAL-->
+    <div id="qCarga">
+    </div>
+  </div>  
   
-
     <!-- Main content -->
-   <div class="qCarga">
+    
 
-   </div>
             
             
 

@@ -1,37 +1,40 @@
+<?php
+include("../DataBase/conexion.php");
+?>
 <section class="content">
   <div class="container-fluid">
     <div class="container m">
       <div class="row">
         <div class="col">
-          <div class="form-group row">
-            <div class="col-4">
-              <label for="Nombres">Nombres</label>
-              <input type="text" class="form-control" id="nombres" name="nombres">
+          <form method="POST" action="./logica/guardarUsuario.php">
+            <div class="form-group row">
+              <div class="col-4">
+                <label for="Nombres">Nombres</label>
+                <input type="text" class="form-control" id="nombres" name="nombres">
+              </div>
+              <div class="col-4">
+                <label for="Apeliidos">Apeliidos</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos">
+              </div>
+              <div class="col-4">
+                <label for="CorreoElectronico">Correo Electronico</label>
+                <input type="text" class="form-control" id="apellidos" name="CorreoElectronico">
+              </div>
             </div>
-            <div class="col-4">
-              <label for="Apeliidos">Apeliidos</label>
-              <input type="text" class="form-control" id="apellidos" name="apellidos">
+            <div class="form-group row">
+              <div class="col-6">
+                <label for="Edad">Edad</label>
+                <input type="number" class="form-control" id="apellidos" name="Edad">
+              </div>
+              <div class="col-6">
+                <label for="Telefono">Celular</label>
+                <input type="number" class="form-control" id="dirección" name="telefono">
+              </div>
+              <div>
+                <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+              </div>
             </div>
-            <div class="col-4">
-              <label for="CorreoElectronico">Correo Electronico</label>
-              <input type="text" class="form-control" id="apellidos" name="CorreoElectronico">
-            </div>
-
-          </div>
-          <div class="form-group row">
-            <div class="col-6">
-              <label for="Edad">Edad</label>
-              <input type="number" class="form-control" id="apellidos" name="Edad">
-            </div>
-            <div class="col-6">
-              <label for="Telefono">Celular</label>
-              <input type="number" class="form-control" id="dirección" name="telefono">
-            </div>
-            <div>
-              <button type="button" class="btn btn-primary mt-3">Enviar</button>
-            </div>
-
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -47,109 +50,29 @@
             <th scope="col">Celular</th>
             <th scope="col">Eliminar</th>
             <th scope="col">Modificar</th>
-
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Luis</td>
-            <td>Lopez</td>
-            <td>Luislop25@gmail.com</td>
-            <td>19</td>
-            <td>300555518</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
-
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Luisa</td>
-            <td>Mesa</td>
-            <td>Lumesa@gmail.com</td>
-            <td>25</td>
-            <td>30055500</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Margarita</td>
-            <td>Aquite</td>
-            <td>MargaritaAqu26@hotmail.com</td>
-            <td>59</td>
-            <td>30055500</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Jean</td>
-            <td>Rojas</td>
-            <td>JeanR146@gmail.com</td>
-            <td>18</td>
-            <td>30055566</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Mateo</td>
-            <td>Muñoz</td>
-            <td>Matm25@gmail.com</td>
-            <td>25</td>
-            <td>30055188</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Juliana</td>
-            <td>Toro</td>
-            <td>JuliTr16@hotmail.com</td>
-            <td>30</td>
-            <td>300551935</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>Andrez</td>
-            <td>Martinez</td>
-            <td>AndreMar@gmail.com</td>
-            <td>30</td>
-            <td>30055196</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
-          </tr>
+          <?php
+          $query = "SELECT id, nombre, apellido, correo, edad, celular FROM `tbl_usuarios`";
+          $usuarios = mysqli_query($conexion, $query);
+          while ($row = mysqli_fetch_assoc($usuarios)) {
+          ?>
+            <tr>
+              <th scope="row"><?php echo $row["id"] ?></th>
+              <td><?php echo $row["nombre"] ?></td>
+              <td><?php echo $row["apellido"] ?></td>
+              <td><?php echo $row["correo"] ?></td>
+              <td><?php echo $row["edad"] ?></td>
+              <td><?php echo $row["celular"] ?></td>
+              <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn btn-warning">Modificar</button>
+              </td>
+            </tr>
+          <?php } ?>
         </tbody>
       </table>
     </section>

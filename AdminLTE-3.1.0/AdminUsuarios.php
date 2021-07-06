@@ -66,7 +66,7 @@ include("../DataBase/conexion.php");
               <td><?php echo $row["edad"] ?></td>
               <td><?php echo $row["celular"] ?></td>
               <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
+                <a href="./logica/eliminarUsuario.php?id=<?php echo $row["id"] ?>" class="btn btn-danger">Eliminar</a>
               </td>
               <td>
                 <button type="button" class="btn btn btn-warning">Modificar</button>

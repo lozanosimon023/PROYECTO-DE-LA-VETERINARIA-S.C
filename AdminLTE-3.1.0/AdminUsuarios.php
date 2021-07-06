@@ -6,7 +6,7 @@ include("../DataBase/conexion.php");
     <div class="container m">
       <div class="row">
         <div class="col">
-          <form method="POST" action="./logica/guardarUsuario.php">
+          <form id="frmajax" method="POST">
             <div class="form-group row">
               <div class="col-4">
                 <label for="Nombres">Nombres</label>
@@ -31,7 +31,7 @@ include("../DataBase/conexion.php");
                 <input type="number" class="form-control" id="dirección" name="telefono">
               </div>
               <div>
-                <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                <button id="btnCrearUsuario" type="submit" class="btn btn-primary mt-3">Enviar</button>
               </div>
             </div>
           </form>
@@ -53,28 +53,31 @@ include("../DataBase/conexion.php");
           </tr>
         </thead>
         <tbody>
-          <?php
-          $query = "SELECT id, nombre, apellido, correo, edad, celular FROM `tbl_usuarios`";
-          $usuarios = mysqli_query($conexion, $query);
-          while ($row = mysqli_fetch_assoc($usuarios)) {
-          ?>
-            <tr>
-              <th scope="row"><?php echo $row["id"] ?></th>
-              <td><?php echo $row["nombre"] ?></td>
-              <td><?php echo $row["apellido"] ?></td>
-              <td><?php echo $row["correo"] ?></td>
-              <td><?php echo $row["edad"] ?></td>
-              <td><?php echo $row["celular"] ?></td>
-              <td>
-                <a href="./logica/eliminarUsuario.php?id=<?php echo $row["id"] ?>" class="btn btn-danger">Eliminar</a>
-              </td>
-              <td>
-                <button type="button" class="btn btn btn-warning">Modificar</button>
-              </td>
-            </tr>
-          <?php } ?>
+          <?php include("./logica/mostrarUsuarios.php"); ?>
         </tbody>
       </table>
     </section>
   </div>
 </section>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#btnCrearUsuario').click(function() {
+      var datos = $('#frmajax').serialize();
+      $.ajax({
+        type: "POST",
+        url: "./logica/guardarUsuario.php",
+        data: datos,
+        success: function(r) {
+          if (r == 1) {
+            alert("Usuario agregado con exito.");
+          } else {
+            alert("Falló al ingresar el usuario.");
+          }
+        }
+      });
+
+      return false;
+    });
+  });
+</script>

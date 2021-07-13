@@ -51,6 +51,14 @@
      idVeterinaria INT (11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
      Estado BOOLEAN 
  );
+
+ CREATE TABLE tbl_tipo_Consulta(
+     idTipoConsulta INT (11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+     Vacunacion VARCHAR (10) NOT NULL,
+     Profilaxis VARCHAR (10) NOT NULL,
+     Ecografias VARCHAR (9) NOT NULL,
+     Cirugias Varchar (8) NOT NULL
+ );
  
  ALTER TABLE tbl_pedido
  ADD CONSTRAINT FK_cliente_pedido FOREIGN KEY (idCliente)
@@ -75,6 +83,17 @@
  ALTER TABLE tbl_citas
  ADD CONSTRAINT Fk_citas_clinicasVeterinarias FOREIGN KEY (idVeterinaria)
  REFERENCES tbl_clinicas_veterinarias (idVeterinaria);
+
+ ALTER TABLE tbl_paciente
+ ADD CONSTRAINT Fk_citas_paciente FOREIGN KEY (idCliente)
+ REFERENCES tbl_cliente (idCliente);
+
+ ALTER TABLE tbl_citas
+ ADD CONSTRAINT Fk_citas_tipoConsulta FOREIGN KEY (idTipoConsulta)
+ REFERENCES tbl_tipo_Consulta (idTipoConsulta);
+
+ 
+
 
 
 

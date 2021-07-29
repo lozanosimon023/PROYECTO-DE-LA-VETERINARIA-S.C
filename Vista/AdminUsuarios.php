@@ -53,7 +53,7 @@ include("../DataBase/conexion.php");
           </tr>
         </thead>
         <tbody>
-          <?php include("./logica/mostrarUsuarios.php"); ?>
+          <?php include("../AdminLTE-3.1.0/logica/mostrarUsuarios.php"); ?>
         </tbody>
       </table>
     </section>

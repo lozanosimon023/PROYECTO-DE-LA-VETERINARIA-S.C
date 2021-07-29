@@ -17,7 +17,6 @@
      idDetallePed INT (11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
      idPedido INT (11) NOT NULL,
      idProducto INT (11) NOT NULL,
-     TipoProducto VARCHAR (25) NOT NULL,
      Precio DOUBLE NOT NULL,
      Cantidad INT (30) NOT NULL
  );
@@ -59,6 +58,12 @@
      Ecografias VARCHAR (9) NOT NULL,
      Cirugias Varchar (8) NOT NULL
  );
+
+ CREATE TABLE tbl_tipo_producto(
+   idTipoProducto INT (11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   idProducto INT (11) NOT NULL,
+   Tipo VARCHAR (20) NOT NULL
+);
  
  ALTER TABLE tbl_pedido
  ADD CONSTRAINT FK_cliente_pedido FOREIGN KEY (idCliente)
@@ -91,6 +96,11 @@
  ALTER TABLE tbl_citas
  ADD CONSTRAINT Fk_citas_tipoConsulta FOREIGN KEY (idTipoConsulta)
  REFERENCES tbl_tipo_Consulta (idTipoConsulta);
+
+ ALTER TABLE tbl_productos
+ ADD CONSTRAINT Fk_productos_tipoProducto FOREIGN KEY (idTipoProducto)
+ REFERENCES tbl_tipo_producto (idTipoProducto);
+
 
  
 

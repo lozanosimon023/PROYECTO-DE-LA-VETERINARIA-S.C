@@ -10,7 +10,8 @@
      idCliente INT (11) NOT NULL,
      NombreCliente VARCHAR (30) NOT NULL,
      Direccion VARCHAR (15) NOT NULL,
-     Celular VARCHAR (10) NOT NULL
+     Celular VARCHAR (10) NOT 
+     
  );
  
  CREATE TABLE tbl_detalle_pedido(

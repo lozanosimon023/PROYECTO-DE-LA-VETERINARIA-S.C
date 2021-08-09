@@ -1,6 +1,3 @@
-<?php
-include("../DataBase/conexion.php");
-?>
 <section class="content">
   <div class="container-fluid">
     <div class="container m">
@@ -22,13 +19,17 @@ include("../DataBase/conexion.php");
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-6">
+              <div class="col-4">
                 <label for="Edad">Edad</label>
                 <input type="number" class="form-control" id="apellidos" name="Edad">
               </div>
-              <div class="col-6">
+              <div class="col-4">
                 <label for="Telefono">Celular</label>
                 <input type="number" class="form-control" id="dirección" name="telefono">
+              </div>
+              <div class="col-4">
+                <label for="contraseña">Contraseña</label>
+                <input type="text" class="form-control" id="contraseña" name="contraseña">
               </div>
               <div>
                 <button id="btnCrearUsuario" type="submit" class="btn btn-primary mt-3">Enviar</button>
@@ -48,36 +49,12 @@ include("../DataBase/conexion.php");
             <th scope="col">Correo</th>
             <th scope="col">Edad</th>
             <th scope="col">Celular</th>
+            <th scope="col">Contraseña</th>
             <th scope="col">Eliminar</th>
             <th scope="col">Modificar</th>
           </tr>
         </thead>
-        <tbody>
-          <?php include("../AdminLTE-3.1.0/logica/mostrarUsuarios.php"); ?>
-        </tbody>
       </table>
     </section>
   </div>
 </section>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#btnCrearUsuario').click(function() {
-      var datos = $('#frmajax').serialize();
-      $.ajax({
-        type: "POST",
-        url: "./logica/guardarUsuario.php",
-        data: datos,
-        success: function(r) {
-          if (r == 1) {
-            alert("Usuario agregado con exito.");
-          } else {
-            alert("Falló al ingresar el usuario.");
-          }
-        }
-      });
-
-      return false;
-    });
-  });
-</script>

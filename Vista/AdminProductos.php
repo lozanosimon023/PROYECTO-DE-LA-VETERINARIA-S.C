@@ -1,7 +1,3 @@
-<?php
-include("../DataBase/conexion.php")
-?>
-
 <section class="content">
   <div class="container-fluid">
     <div class="container">
@@ -35,9 +31,6 @@ include("../DataBase/conexion.php")
             <th scope="col">Modificar</th>
           </tr>
         </thead>
-        <tbody>
-          <?php include("../AdminLTE-3.1.0/logica/mostrarProductos.php"); ?>
-        </tbody>
 
       </table>
     </section>

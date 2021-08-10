@@ -14,7 +14,7 @@
             </div>
           </div>
           <div>
-            <button type="button" class="btn btn-primary">Enviar</button>
+            <input class="btn btn-primary " value="Guardar" onclick="guardarProductos()">
           </div>
         </div>
       </div>

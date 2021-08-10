@@ -32,3 +32,19 @@ function guardarUsuarios() {
     },
   });
 }
+
+function guardarProductos() {
+  $.ajax({
+    type: "POST",
+    url: "../../../Controlador/CtrolUsuarios.php",
+    data: {
+      nombre: $("#nombre").val(),
+      precio: $("#precio").val(),
+    },
+    success: function (data) {
+      alert(data);
+      $("#nombre").val("");
+      $("#precio").val("");
+    },
+  });
+}

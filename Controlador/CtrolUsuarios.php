@@ -12,11 +12,9 @@ $conexion = new PDODB();
 
 $conexion->connect();
 
-$InstruccionSQL = "INSERT INTO `tbl_usuarios`  
-    (`id`, `nombre`, `apellido`, `correo`, `edad`, `celular`, `Contraseña`)
-    VALUES
+$InstruccionSQL = "INSERT INTO `tbl_usuarios`(`id`, `nombre`, `apellido`, `correo`, `edad`, `celular`, `Contraseña`) VALUES
     (null,'" . $nombres . "', '" . $apellidos . "', '" . $email . "'," . $edad . ",'" . $cel . "','" . $contraseña . "');";
-    
+
 $resultado = $conexion->executeInstruction($InstruccionSQL);
 if ($resultado == true) {
     echo "usuario Guardado Correctamente";

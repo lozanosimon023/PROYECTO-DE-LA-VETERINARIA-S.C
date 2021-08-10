@@ -15,7 +15,7 @@ class PDODB
         $this->host = "localhost";
         $this->usuario = "root";
         $this->pass = "";
-        $this->db = "ccontrol";
+        $this->db = "db_veterinaria";
     }
 
     function connect() // Este método lo que hace es definir a la variable $opciones algunas 

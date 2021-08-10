@@ -752,6 +752,7 @@
 
   <!-- Template Main JS File -->
   <script src="../Modelo/assets/js/main.js"></script>
+  <script src="../AdminLTE-3.1.0/lib/scripts/myScripts.js"></script>
 
 </body>
 

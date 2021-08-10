@@ -8,3 +8,27 @@ function cargar(urlMenu) {
     },
   });
 }
+
+function guardarUsuarios() {
+  $.ajax({
+    type: "POST",
+    url: "../../../Controlador/CtrolUsuarios.php",
+    data: {
+      nombres: $("#nombres").val(),
+      apellidos: $("#apellidos").val(),
+      email: $("#email").val(),
+      edad: $("#edad").val(),
+      cel: $("#cel").val(),
+      contraseña: $("#contraseña").val(),
+    },
+    success: function (data) {
+      alert(data);
+      $("#nombres").val("");
+      $("#apellidos").val("");
+      $("#email").val("");
+      $("#edad").val("");
+      $("#cel").val("");
+      $("#contraseña").val("");
+    },
+  });
+}

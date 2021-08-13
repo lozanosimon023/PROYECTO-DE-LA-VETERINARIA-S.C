@@ -54,7 +54,15 @@
             <th scope="col">Modificar</th>
           </tr>
         </thead>
+        <tbody>
+
+        </tbody>
       </table>
     </section>
   </div>
 </section>
+<script>
+  $(document).ready(function() {
+    listarUsuarios();
+  });
+</script>

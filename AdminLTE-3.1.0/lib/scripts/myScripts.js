@@ -36,15 +36,29 @@ function guardarUsuarios() {
 function guardarProductos() {
   $.ajax({
     type: "POST",
-    url: "../../../Controlador/CtrolUsuarios.php",
+    url: "../../../Controlador/CtrolProductos.php",
     data: {
       nombre: $("#nombre").val(),
       precio: $("#precio").val(),
+      tipo_producto: $("#tipo_producto").val(),
     },
     success: function (data) {
       alert(data);
       $("#nombre").val("");
       $("#precio").val("");
+      $("#tipo_producto").val();
+    },
+  });
+}
+
+function listarUsuarios() {
+  $.ajax({
+    type: "POST",
+    url: "../../../Controlador/CtrolListarUsuarios.php",
+    data: {},
+    success: function (data) {
+      $("tbody").text("");
+      $("tbody").append(data);
     },
   });
 }

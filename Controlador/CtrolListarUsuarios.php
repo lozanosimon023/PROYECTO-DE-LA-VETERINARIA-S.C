@@ -20,3 +20,4 @@ foreach ($listado as $key => $value) {
         <td scope="col"><input class="btn btn-warning" type="button" value="Modificar" onclick="modificarUsuario()"></td>
     </tr>';
 }
+

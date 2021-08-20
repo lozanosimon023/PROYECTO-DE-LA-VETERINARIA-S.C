@@ -5,13 +5,20 @@
         <div class="col">
           <div class="form-group row">
             <div class="col-6">
-              <label for="Nombres">Nombres</label>
-              <input type="text" class="form-control" id="nombres" name="nombres">
+              <label for="cliente">Nombre cliente</label>
+              <select name="Nomcliente" id="nomcliente" class="form-control">
+                <option value=""></option>
+                <option value="1">Simón</option>
+                <option value="2">Juanca</option>
+                <option value="3">Geny</option>
+                <option value="4">Clemencia</option>
+                <option value="5">David</option>
+              </select>
             </div>
             <div class="form-group col-md-6">
               <div class="">
-                <label for="Telefono">Dirección</label>
-                <input type="text" class="form-control" id="dirección" name="telefono">
+                <label for="direccion">Dirección</label>
+                <input type="text" class="form-control" id="direccion" name="direccion">
               </div>
             </div>
 
@@ -28,7 +35,7 @@
 
 
             <div>
-              <button type="button" class="btn btn-primary mt-3">Enviar</button>
+              <input class="btn btn-primary mt-3" value="Guardar" onclick="guardarPedidos()">
             </div>
 
           </div>

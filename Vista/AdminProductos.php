@@ -18,6 +18,7 @@
             <div class="col">
               <label for="Apeliidos">Tipo Producto</label>
               <select name="tipo_producto" id="tipo_producto" class="form-control">
+                <option value=""></option>
                 <option value="1">cama</option>
                 <option value="2">guacal burbuja</option>
                 <option value="3">guacal espaldero</option>
@@ -30,7 +31,7 @@
             </div>
           </div>
           <div>
-            <input class="btn btn-primary " value="Guardar" onclick="guardarProductos()">
+            <input class="btn btn-primary mt-3" value="Guardar" onclick="guardarProductos()">
           </div>
         </div>
       </div>
@@ -52,3 +53,8 @@
     </section>
   </div>
 </section>
+<script>
+  $(document).ready(function() {
+    listarProductos();
+  });
+</script>

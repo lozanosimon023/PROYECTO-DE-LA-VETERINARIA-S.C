@@ -62,3 +62,22 @@ function listarUsuarios() {
     },
   });
 }
+
+function guardarPedidos() {
+  $.ajax({
+    type: "POST",
+    url: "../../../Controlador/CtrolPedidos.php",
+    data: {
+      $cliente: $("#cliente").val(),
+      $direccion: $("#direccion").val(),
+      $total: $("#total").val(),
+    },
+    success: function (data) {
+      alert(data);
+      $("#cliente").val(""),
+        $("#direccion").val(""),
+        $("#celular").val(),
+        $("#total").val();
+    },
+  });
+}

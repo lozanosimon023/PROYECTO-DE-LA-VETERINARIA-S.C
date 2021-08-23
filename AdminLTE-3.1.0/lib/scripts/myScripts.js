@@ -63,21 +63,67 @@ function listarUsuarios() {
   });
 }
 
+function listarProductos() {
+  $.ajax({
+    type: "POST",
+    url: "../../../Controlador/CtrolListarProductos.php",
+    data: {},
+    success: function (data) {
+      $("tbody").text("");
+      $("tbody").append(data);
+    },
+  });
+}
+
+function listarPedidos() {
+  $.ajax({
+    type: "POST",
+    url: "../../../Controlador/CtrolListarPedidos.php",
+    data: {},
+    success: function (data) {
+      $("tbody").text("");
+      $("tbody").append(data);
+    },
+  });
+}
+
 function guardarPedidos() {
   $.ajax({
     type: "POST",
     url: "../../../Controlador/CtrolPedidos.php",
     data: {
-      $cliente: $("#cliente").val(),
-      $direccion: $("#direccion").val(),
-      $total: $("#total").val(),
+      direccion: $("#direccion").val(),
+      celular: $("#celular").val(),
+      total: $("#total").val(),
     },
     success: function (data) {
       alert(data);
-      $("#cliente").val(""),
-        $("#direccion").val(""),
-        $("#celular").val(),
-        $("#total").val();
+      $("#cliente").val("");
+      $("#direccion").val("");
+      $("#celular").val("");
+      $("#total").val("");
+    },
+  });
+}
+
+function guardarCitas() {
+  $.ajax({
+    type: "POST",
+    url: "../../../Controlador/CtrolCitas.php",
+    data: {
+      nombrePaciente: $("#nombrePaciente").val(),
+      nombreCliente: $("#nombreCliente").val(),
+      tipoConsulta: $("#tipoConsulta").val(),
+      fechayHora: $("#fechayHora").val(),
+      estado: $("#estado").val(),
+    },
+    success: function (data) {
+      alert(data);
+      $("#nombrePaciente").val(""),
+        $("#nombreCliente").val(""),
+        $("#tipoConsulta").val(),
+        $("#fechayHora").val();
+      $("#estado").val();
     },
   });
 }

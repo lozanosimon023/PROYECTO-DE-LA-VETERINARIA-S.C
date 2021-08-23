@@ -92,3 +92,8 @@
     </section>
   </div>
 </section>
+<script>
+  $(document).ready(function() {
+    listarPedidos();
+  });
+</script>

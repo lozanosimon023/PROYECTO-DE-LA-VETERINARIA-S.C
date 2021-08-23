@@ -42,13 +42,14 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Tipo</th>
+            <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
+            <th scope="col">Tipo</th>
             <th scope="col">Eliminar</th>
             <th scope="col">Modificar</th>
           </tr>
         </thead>
-
+        <tbody></tbody>
       </table>
     </section>
   </div>

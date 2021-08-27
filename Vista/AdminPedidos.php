@@ -71,20 +71,6 @@
             </td>
 
           </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Luis</td>
-            <td>Calle 46a #51-40</td>
-            <td>3005515518</td>
-            <td>120</td>
-            <td>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn btn-warning">Modificar</button>
-            </td>
-
-          </tr>
 
 
         </tbody>

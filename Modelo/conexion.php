@@ -54,6 +54,26 @@ class PDODB
         }
     }
 
+    function login($sql) // Este método tiene como objetivo obtener datos, por ejemplo el listado
+    // de registros para ser mostrados en la tabla
+    {
+        try {
+            $data = array();
+            $result = $this->connection->query($sql);
+            if ($result->rowCount() > 0) {
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                    array_push($data, $row);
+                }
+            } else {
+                $data = false;
+            }
+            return $data;
+        } catch (\Throwable $th) {
+            die("Oh noes! There's an error in the query!");
+        }
+    }
+
+
     function executeInstruction($sql) // Este método tiene como objetivo ejecutar instrucciones
     // como por ejemplo cuando vamos a guardar, modificar o eliminar un regístro en la base de datos.
     {

@@ -689,19 +689,19 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form action="../Controlador/CtrolLogin.php" method="POST">
                     <div class="input-group form-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                       </div>
-                      <input type="text" class="form-control" placeholder="Usuario">
+                      <input type="text" class="form-control" id="username" name="username" placeholder="Usuario">
 
                     </div>
                     <div class="input-group form-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                       </div>
-                      <input type="password" class="form-control" placeholder="Contraseña">
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
 
                     </div>
                     <div class="row align-items-center remember">
@@ -709,7 +709,7 @@
                     </div>
                     <div class="form-group">
                       <div class="d-flex justify-content-center links mt-3 ">
-                        <a type="button" class="btn d-block btn-primary col Entrar" href="./MenuAdministrador.php">Entrar</a>
+                        <input type="submit" class="btn d-block btn-primary col Entrar" value="Entrar">
                       </div>
                     </div>
                   </form>

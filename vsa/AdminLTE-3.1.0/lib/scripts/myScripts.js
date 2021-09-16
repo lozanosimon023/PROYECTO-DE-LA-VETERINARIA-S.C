@@ -12,14 +12,14 @@ function cargar(urlMenu) {
 function guardarUsuarios() {
   $.ajax({
     type: "POST",
-    url: "../../../Controlador/CtrolUsuarios.php",
+    url: "../../../VSA/Controlador/CtrolUsuarios.php",
     data: {
       nombres: $("#nombres").val(),
       apellidos: $("#apellidos").val(),
       email: $("#email").val(),
       edad: $("#edad").val(),
       cel: $("#cel").val(),
-      contraseña: $("#contraseña").val(),
+      contrasena: $("#contrasena").val(),
     },
     success: function (data) {
       alert(data);
@@ -28,7 +28,7 @@ function guardarUsuarios() {
       $("#email").val("");
       $("#edad").val("");
       $("#cel").val("");
-      $("#contraseña").val("");
+      $("#contrasena").val("");
     },
   });
 }
@@ -36,7 +36,7 @@ function guardarUsuarios() {
 function guardarProductos() {
   $.ajax({
     type: "POST",
-    url: "../../../Controlador/CtrolProductos.php",
+    url: "../../../VSA/Controlador/CtrolProductos.php",
     data: {
       nombre: $("#nombre").val(),
       precio: $("#precio").val(),
@@ -54,7 +54,7 @@ function guardarProductos() {
 function listarUsuarios() {
   $.ajax({
     type: "POST",
-    url: "../../../Controlador/CtrolListarUsuarios.php",
+    url: "../../../VSA/Controlador/CtrolListarUsuarios.php",
     data: {},
     success: function (data) {
       $("tbody").text("");
@@ -66,7 +66,7 @@ function listarUsuarios() {
 function listarProductos() {
   $.ajax({
     type: "POST",
-    url: "../../../Controlador/CtrolListarProductos.php",
+    url: "../../../VSA/Controlador/CtrolListarProductos.php",
     data: {},
     success: function (data) {
       $("tbody").text("");
@@ -78,7 +78,7 @@ function listarProductos() {
 function listarPedidos() {
   $.ajax({
     type: "POST",
-    url: "../../../Controlador/CtrolListarPedidos.php",
+    url: "../../../VSA/Controlador/CtrolListarPedidos.php",
     data: {},
     success: function (data) {
       $("tbody").text("");
@@ -90,7 +90,7 @@ function listarPedidos() {
 function guardarPedidos() {
   $.ajax({
     type: "POST",
-    url: "../../../Controlador/CtrolPedidos.php",
+    url: "../../../VSA/Controlador/CtrolPedidos.php",
     data: {
       direccion: $("#direccion").val(),
       celular: $("#celular").val(),
@@ -109,7 +109,7 @@ function guardarPedidos() {
 function guardarCitas() {
   $.ajax({
     type: "POST",
-    url: "../../../Controlador/CtrolCitas.php",
+    url: "../../../VSA/Controlador/CtrolCitas.php",
     data: {
       nombrePaciente: $("#nombrePaciente").val(),
       nombreCliente: $("#nombreCliente").val(),

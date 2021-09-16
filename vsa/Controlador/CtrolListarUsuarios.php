@@ -6,7 +6,6 @@ $conexion->connect();
 
 $consulta = "SELECT * FROM tbl_usuarios";
 $listado = $conexion->executeInstruction($consulta);
-
 foreach ($listado as $key => $value) {
     echo '<tr>
         <td scope="col">' . $value['id'] . '</td>

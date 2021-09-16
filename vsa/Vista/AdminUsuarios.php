@@ -28,8 +28,8 @@
                 <input type="number" class="form-control" id="cel" name="cel">
               </div>
               <div class="col-4">
-                <label for="contraseña">Contraseña</label>
-                <input type="text" class="form-control" id="contraseña" name="contraseña">
+                <label for="contrasena">Contraseña</label>
+                <input type="text" class="form-control" id="contrasena" name="contrasena">
               </div>
               <div>
                 <input class="btn btn-primary mt-3" value="Guardar" onclick="guardarUsuarios()">

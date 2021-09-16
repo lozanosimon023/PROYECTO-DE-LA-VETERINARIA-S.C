@@ -4,16 +4,14 @@ require_once '../Modelo/conexion.php';
 $nombres = $_POST['nombres'];
 $apellidos = $_POST['apellidos'];
 $email = $_POST['email'];
-$edad = $_POST['edad'];
-$cel = $_POST['cel'];
-$contrasena = $_POST['contraseña'];
+$contrasena = $_POST['contrasena'];
 
 $conexion = new PDODB();
 
 $conexion->connect();
 
-$InstruccionSQL = "INSERT INTO `tbl_usuarios`(`id`, `nombre`, `apellido`, `correo`, `edad`, `celular`, `Contrasena`) VALUES
-    (null,'" . $nombres . "', '" . $apellidos . "', '" . $email . "'," . $edad . ",'" . $cel . "','" . $contrasena . "');";
+$InstruccionSQL = "INSERT INTO `tbl_usuarios`(`id`, `nombre`, `apellido`, `correo`, `Contrasena`) VALUES
+    (null,'" . $nombres . "', '" . $apellidos . "', '" . $email . "','" . $contrasena . "');";
 
 $resultado = $conexion->executeInstruction($InstruccionSQL);
 if ($resultado == true) {

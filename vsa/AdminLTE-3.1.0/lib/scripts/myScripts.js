@@ -29,6 +29,21 @@ function guardarUsuarios() {
       $("#edad").val("");
       $("#cel").val("");
       $("#contrasena").val("");
+      listarUsuarios();
+    },
+  });
+}
+
+function eliminarUsuario(idUsuario) {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolEliminarUsuarios.php",
+    data: {
+      idUsuario: idUsuario,
+    },
+    success: function (data) {
+      alert(data);
+      listarUsuarios();
     },
   });
 }

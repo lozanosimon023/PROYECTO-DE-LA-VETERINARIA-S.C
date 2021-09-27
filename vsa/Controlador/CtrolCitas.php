@@ -1,18 +1,18 @@
 <?php
 require_once '../Modelo/conexion.php';
 
-$nombrePaciente = $_POST['nombrePaciente'];
-$nombreCliente = $_POST['nombreCliente'];
-$tipoConsulta = $_POST['tipoConsulta'];
-$fecha_Hora = $_POST['fecha_Hora'];
-$estado = $_POST['estado'];
+$Paciente = $_POST['Paciente'];
+$Cliente = $_POST['Cliente'];
+$TipoConsulta = $_POST['TipoConsulta'];
+$Fecha_Hora = $_POST['Fecha_Hora'];
+$Estado = $_POST['Estado'];
 
 $conexion = new PDODB();
 
 $conexion->connect();
 
 $InstruccionSQL = "INSERT INTO `tbl_citas`(`idCitas`, `idPaciente`, `idCliente`, `idTipoConsulta`, `Fecha_Hora`, `Estado`) VALUES 
-    (null,'" . $nombrePaciente . "', '" . $nombreCliente . "', '" . $tipoConsulta . "'," . $fecha_Hora . ",'" . $estado . "');";
+    (null,'" . $Paciente . "', '" . $Cliente . "', '" . $TipoConsulta . "'," . $Fecha_Hora . ",'" . $Estado . "');";
 
 $resultado = $conexion->executeInstruction($InstruccionSQL);
 if ($resultado == true) {

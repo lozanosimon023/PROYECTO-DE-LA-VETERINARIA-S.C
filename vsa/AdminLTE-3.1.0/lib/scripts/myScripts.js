@@ -47,6 +47,32 @@ function eliminarUsuario(idUsuario) {
     },
   });
 }
+function eliminarPedido(idPedido) {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolEliminarPedidos.php",
+    data: {
+      idPedido: idPedido,
+    },
+    success: function (data) {
+      alert(data);
+      listarPedidos();
+    },
+  });
+}
+function eliminarProducto(idProducto) {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolEliminarProductos.php",
+    data: {
+      idProducto: idProducto,
+    },
+    success: function (data) {
+      alert(data);
+      listarProductos();
+    },
+  });
+}
 
 function guardarProductos() {
   $.ajax({
@@ -126,19 +152,19 @@ function guardarCitas() {
     type: "POST",
     url: "../../../VSA/Controlador/CtrolCitas.php",
     data: {
-      nombrePaciente: $("#nombrePaciente").val(),
-      nombreCliente: $("#nombreCliente").val(),
-      tipoConsulta: $("#tipoConsulta").val(),
-      fechayHora: $("#fechayHora").val(),
-      estado: $("#estado").val(),
+      Paciente: $("#Paciente").val(),
+      Cliente: $("#Cliente").val(),
+      TipoConsulta: $("#TipoConsulta").val(),
+      Fecha_Hora: $("#Fecha_Hora").val(),
+      Estado: $("#Estado").val(),
     },
     success: function (data) {
       alert(data);
-      $("#nombrePaciente").val(""),
-        $("#nombreCliente").val(""),
-        $("#tipoConsulta").val(),
-        $("#fechayHora").val();
-      $("#estado").val();
+      $("#Paciente").val(""),
+        $("#Cliente").val(""),
+        $("#TipoConsulta").val(),
+        $("#Fecha_Hora").val();
+      $("#Estado").val();
     },
   });
 }

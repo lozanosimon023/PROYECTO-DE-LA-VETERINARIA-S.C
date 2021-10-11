@@ -11,7 +11,7 @@ $idProducto = $_POST['idProducto'];
 $InstruccionSQL = "DELETE FROM tbl_productos WHERE id = " . $idProducto;
 $resultado = $conexion->executeInstruction($InstruccionSQL);
 if ($resultado == true) {
-    echo "Usuario eliminado correctamente.";
+    echo "Producto eliminado correctamente.";
 } else {
-    echo "No fue posible eliminar el usuario.";
+    echo "No fue posible eliminar el Producto.";
 }

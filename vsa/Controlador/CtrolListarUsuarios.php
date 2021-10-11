@@ -14,6 +14,6 @@ foreach ($listado as $key => $value) {
             <td scope="col">' . $value['correo'] . '</td>
             <td scope="col">' . $value['Contrasena'] . '</td>
             <td scope="col"><input class="btn btn-danger" type="button" value="Eliminar" onclick="eliminarUsuario(' . $value['id'] . ')"></td>
-            <td scope="col"><input class="btn btn-warning" type="button" value="Modificar" onclick="modificarUsuario(' . $value['id'] . ')"></td>
+            <td scope="col"><input class="btn btn-warning" type="button" value="Modificar" onclick="buscarUsuario(' . $value['id'] . ')"></td>
         </tr>';
 }

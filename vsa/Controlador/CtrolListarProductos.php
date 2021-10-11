@@ -14,7 +14,6 @@ foreach ($listado as $key => $value) {
         <td scope="col">' . $value['nombre'] . '</td>
         <td scope="col">' . $value['Precio'] . '</td>
         <td scope="col">' . $value['Tipo'] . '</td>
-        <td scope="col"><input class="btn btn-danger" type="button" value="Eliminar" onclick="eliminarProducto(' . $value['idProducto'] . ')"></td>
         <td scope="col"><input class="btn btn-warning" type="button" value="Modificar" onclick="modificarProducto(' . $value['idProducto'] . ')"></td>
     </tr>';
 }

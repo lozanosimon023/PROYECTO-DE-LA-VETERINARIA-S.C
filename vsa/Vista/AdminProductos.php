@@ -1,6 +1,10 @@
 <section class="content">
   <div class="container-fluid">
     <div class="container">
+      <H5>
+        <center>ADMINISTRAR PRODUCTOS</center>
+      </H5>
+      <BR>
       <div class="row">
         <div class="col">
           <div class="form-group row">
@@ -45,7 +49,6 @@
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
             <th scope="col">Tipo</th>
-            <th scope="col">Eliminar</th>
             <th scope="col">Modificar</th>
           </tr>
         </thead>

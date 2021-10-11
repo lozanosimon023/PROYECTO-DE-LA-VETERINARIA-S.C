@@ -1,6 +1,10 @@
 <section class="content">
   <div class="container-fluid">
     <div class="container m">
+      <H5>
+        <center>ADMINISTRAR PEDIDOS</center>
+      </H5>
+      <BR>
       <div class="row">
         <div class="col">
           <div class="form-group row">
@@ -24,7 +28,7 @@
 
 
             <div>
-              <input class="btn btn-primary mt-3" value="Guardar" onclick="guardarPedidos()">
+              <a class="btn btn-primary mt-3" onclick="guardarPedidos()">Guardar</a>
             </div>
 
           </div>
@@ -45,8 +49,6 @@
           </tr>
         </thead>
         <tbody>
-
-
 
         </tbody>
       </table>

@@ -734,8 +734,6 @@
     </div>
   </div>
 
-
-
   <div id="preloader"></div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
@@ -753,7 +751,6 @@
   <!-- Template Main JS File -->
   <script src="../Modelo/assets/js/main.js"></script>
   <script src="../AdminLTE-3.1.0/lib/scripts/myScripts.js"></script>
-
 </body>
 
 </html>

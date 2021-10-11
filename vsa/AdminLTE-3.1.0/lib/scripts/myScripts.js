@@ -47,6 +47,46 @@ function eliminarUsuario(idUsuario) {
     },
   });
 }
+
+function buscarUsuario(id) {
+  $("#ModificarUsuario").modal("show");
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolBuscarUsuario.php",
+    data: {
+      id: id,
+    },
+    success: function (data) {
+      $("#bodyModificarUsuario").text("");
+      $("#bodyModificarUsuario").append(data);
+    },
+  });
+}
+
+function actualizarUsuario() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolModificarUsuarios.php",
+    data: {
+      id: $("#idUsuario").val(),
+      nombre: $("#nombre").val(),
+      apellido: $("#apellido").val(),
+      correo: $("#correo").val(),
+      Contrasena: $("#Contrasena").val(),
+    },
+    success: function (data) {
+      $("#ModificarUsuario").modal("hide");
+      alert(data);
+      $("#idUsuario").val("");
+      $("#nombre").val("");
+      $("#apellido").val("");
+      $("#correo").val("");
+      $("#Contrasena").val("");
+      listarUsuarios();
+    },
+  });
+}
+
 function eliminarPedido(idPedido) {
   $.ajax({
     type: "POST",
@@ -57,19 +97,6 @@ function eliminarPedido(idPedido) {
     success: function (data) {
       alert(data);
       listarPedidos();
-    },
-  });
-}
-function eliminarProducto(idProducto) {
-  $.ajax({
-    type: "POST",
-    url: "../../../VSA/Controlador/CtrolEliminarProductos.php",
-    data: {
-      idProducto: idProducto,
-    },
-    success: function (data) {
-      alert(data);
-      listarProductos();
     },
   });
 }
@@ -88,6 +115,7 @@ function guardarProductos() {
       $("#nombre").val("");
       $("#precio").val("");
       $("#tipo_producto").val();
+      listarPedidos();
     },
   });
 }
@@ -143,6 +171,7 @@ function guardarPedidos() {
       $("#direccion").val("");
       $("#celular").val("");
       $("#total").val("");
+      listarPedidos();
     },
   });
 }
@@ -152,19 +181,30 @@ function guardarCitas() {
     type: "POST",
     url: "../../../VSA/Controlador/CtrolCitas.php",
     data: {
-      Paciente: $("#Paciente").val(),
-      Cliente: $("#Cliente").val(),
-      TipoConsulta: $("#TipoConsulta").val(),
-      Fecha_Hora: $("#Fecha_Hora").val(),
-      Estado: $("#Estado").val(),
+      Paciente: $("#paciente").val(),
+      Cliente: $("#cliente").val(),
+      TipoConsulta: $("#tipoConsulta").val(),
+      Fecha_Hora: $("#Fecha").val(),
     },
     success: function (data) {
       alert(data);
-      $("#Paciente").val(""),
-        $("#Cliente").val(""),
-        $("#TipoConsulta").val(),
-        $("#Fecha_Hora").val();
-      $("#Estado").val();
+      $("#paciente").val(""),
+        $("#cliente").val(""),
+        $("#tipoConsulta").val(""),
+        $("#fecha").val("");
+      listarCitas();
+    },
+  });
+}
+
+function listarCitas() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolListarCitas.php",
+    data: {},
+    success: function (data) {
+      $("tbody").text("");
+      $("tbody").append(data);
     },
   });
 }

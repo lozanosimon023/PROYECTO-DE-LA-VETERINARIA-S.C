@@ -37,7 +37,7 @@
         </div>
       </div>
       <div>
-        <input class="btn btn-primary mt-3" value="Guardar" onclick="guardarCitas()">
+        <a class="btn btn-primary mt-3" onclick="guardarCitas()">Guardar</a>
       </div>
     </div>
 

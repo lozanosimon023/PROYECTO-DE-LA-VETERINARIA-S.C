@@ -87,16 +87,14 @@ function actualizarUsuario() {
   });
 }
 
-function eliminarPedido(idPedido) {
+function listarUsuarios() {
   $.ajax({
     type: "POST",
-    url: "../../../VSA/Controlador/CtrolEliminarPedidos.php",
-    data: {
-      idPedido: idPedido,
-    },
+    url: "../../../VSA/Controlador/CtrolListarUsuarios.php",
+    data: {},
     success: function (data) {
-      alert(data);
-      listarPedidos();
+      $("tbody").text("");
+      $("tbody").append(data);
     },
   });
 }
@@ -120,18 +118,6 @@ function guardarProductos() {
   });
 }
 
-function listarUsuarios() {
-  $.ajax({
-    type: "POST",
-    url: "../../../VSA/Controlador/CtrolListarUsuarios.php",
-    data: {},
-    success: function (data) {
-      $("tbody").text("");
-      $("tbody").append(data);
-    },
-  });
-}
-
 function listarProductos() {
   $.ajax({
     type: "POST",
@@ -144,14 +130,18 @@ function listarProductos() {
   });
 }
 
-function listarPedidos() {
+function buscarProducto(idProducto) {
+  $("#ModificarProducto").modal("show");
   $.ajax({
     type: "POST",
-    url: "../../../VSA/Controlador/CtrolListarPedidos.php",
-    data: {},
+    url: "../../../VSA/Controlador/CtrolBuscarProducto.php",
+    data: {
+      idProducto: idProducto,
+    },
     success: function (data) {
-      $("tbody").text("");
-      $("tbody").append(data);
+      $("#bodyModificarProducto").text("");
+      $("#bodyModificarProducto").append(data);
+      listarTipoProductos();
     },
   });
 }
@@ -172,6 +162,32 @@ function guardarPedidos() {
       $("#celular").val("");
       $("#total").val("");
       listarPedidos();
+    },
+  });
+}
+
+function eliminarPedido(idPedido) {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolEliminarPedidos.php",
+    data: {
+      idPedido: idPedido,
+    },
+    success: function (data) {
+      alert(data);
+      listarPedidos();
+    },
+  });
+}
+
+function listarPedidos() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolListarPedidos.php",
+    data: {},
+    success: function (data) {
+      $("tbody").text("");
+      $("tbody").append(data);
     },
   });
 }
@@ -205,6 +221,45 @@ function listarCitas() {
     success: function (data) {
       $("tbody").text("");
       $("tbody").append(data);
+    },
+  });
+}
+
+function listarTipoProductos() {
+  $.ajax({
+    type: "GET",
+    url: "../../../VSA/Controlador/CtrolListarTipoProductos.php",
+    data: {},
+    success: function (data) {
+      let select = document.querySelector("#tipo_producto");
+      $("#tipo_producto").text("");
+      $("#tipo_producto").append(data);
+      $("#tipo_producto_Modal").text("");
+      $("#tipo_producto_Modal").append(data);
+      if (select.dataset.valueid !== "") {
+        select.value = select.dataset.valueid;
+      }
+    },
+  });
+}
+
+function actualizarProducto() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolModificarProductos.php",
+    data: {
+      nombre: $("#nombreModal").val(),
+      Precio: $("#PrecioModal").val(),
+      idTipoProducto: $("#tipo_producto").val(),
+      idProducto: $("#idProducto").val(),
+    },
+    success: function (data) {
+      $("#ModificarProducto").modal("hide");
+      alert(data);
+      $("#nombre").val(),
+        $("#Precio").val(),
+        $("#tipo_producto").val(),
+        listarProductos();
     },
   });
 }

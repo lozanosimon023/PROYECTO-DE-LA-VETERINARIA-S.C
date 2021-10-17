@@ -21,21 +21,13 @@
           <div class="row">
             <div class="col">
               <label for="Apeliidos">Tipo Producto</label>
-              <select name="tipo_producto" id="tipo_producto" class="form-control">
+              <select name="tipo_producto_Modal" id="tipo_producto_Modal" class="form-control">
                 <option value=""></option>
-                <option value="1">cama</option>
-                <option value="2">guacal burbuja</option>
-                <option value="3">guacal espaldero</option>
-                <option value="4">correas</option>
-                <option value="5">correas retractiles</option>
-                <option value="6">bozales</option>
-                <option value="7">cuido para perro</option>
-                <option value="8">cuido para gato</option>
               </select>
             </div>
           </div>
           <div>
-            <input class="btn btn-primary mt-3" value="Guardar" onclick="guardarProductos()">
+            <a class="btn btn-primary mt-3" onclick="guardarProductos()">Guardar</a>
           </div>
         </div>
       </div>
@@ -57,8 +49,31 @@
     </section>
   </div>
 </section>
+
+<!-- Modal de ModificarProducto -->
+<div class="modal fade" id="ModificarProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Actualizar producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="bodyModificarProducto">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="actualizarProducto()">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   $(document).ready(function() {
     listarProductos();
+    listarTipoProductos();
   });
 </script>

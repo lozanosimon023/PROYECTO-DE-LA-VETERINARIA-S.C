@@ -6,7 +6,7 @@ $conexion->connect();
 
 $idPedido = $_POST['idPedido'];
 
-$consulta = "SELECT p.idProducto AS idProducto, p.nombre AS nombre, dp.Cantidad AS Cantidad, dp.Subtotal AS Subtotal, p.Precio AS Precio 
+$consulta = "SELECT p.idProducto AS idProducto, p.nombre AS nombre, dp.Cantidad AS Cantidad, dp.Subtotal AS Subtotal, p.Precio AS Precio, dp.idDetallePed AS idDetallePed
             FROM `tbl_detalle_pedido` dp
             INNER JOIN tbl_productos p on dp.idProducto=p.idProducto
             WHERE dp.idPedido = $idPedido";
@@ -33,7 +33,7 @@ foreach ($listado as $key => $value) {
                 <td scope="col">' . $value['Cantidad'] . '</td>
                 <td scope="col">' . $value['Precio'] . '</td>
                 <td scope="col">' . $value['Subtotal'] . '</td>
-                <td scope="col"><input class="btn btn-danger" type="button" value="Eliminar" onclick="eliminarPedido(' . $value['idProducto'] . ')"></td>       
+                <td scope="col"><input class="btn btn-danger" type="button" value="Eliminar" onclick="eliminarDetallePedido(' . $value['idDetallePed'] . ')"></td>       
             </tr>';
 }
 echo '</tbody>

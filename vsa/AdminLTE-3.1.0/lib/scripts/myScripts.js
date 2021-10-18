@@ -48,6 +48,20 @@ function eliminarUsuario(idUsuario) {
   });
 }
 
+function eliminarDetallePedido(idDetallePed) {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolEliminarDetallePedido.php",
+    data: {
+      idDetallePed: idDetallePed,
+    },
+    success: function (data) {
+      alert(data);
+      listarDetallePedido($("#idPedido").val());
+    },
+  });
+}
+
 function buscarUsuario(id) {
   $("#ModificarUsuario").modal("show");
   $.ajax({
@@ -253,6 +267,7 @@ function BuscarPedido(idPedido) {
 }
 
 function DetallePedido(idPedido) {
+  listarDetallePedido(idPedido);
   $("#DetallePedido").modal("show");
   $.ajax({
     type: "POST",
@@ -278,7 +293,6 @@ function listarDetallePedido(idPedido) {
     success: function (data) {
       $("#tablaListadoProductos").text("");
       $("#tablaListadoProductos").append(data);
-      listarPedidos();
     },
   });
 }

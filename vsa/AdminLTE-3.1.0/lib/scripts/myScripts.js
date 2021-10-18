@@ -146,6 +146,27 @@ function buscarProducto(idProducto) {
   });
 }
 
+function actualizarProducto() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolModificarProductos.php",
+    data: {
+      nombre: $("#nombreModal").val(),
+      Precio: $("#PrecioModal").val(),
+      idTipoProducto: $("#tipo_producto").val(),
+      idProducto: $("#idProducto").val(),
+    },
+    success: function (data) {
+      $("#ModificarProducto").modal("hide");
+      alert(data);
+      $("#nombre").val(),
+        $("#Precio").val(),
+        $("#tipo_producto").val(),
+        listarProductos();
+    },
+  });
+}
+
 function guardarPedidos() {
   $.ajax({
     type: "POST",
@@ -192,6 +213,143 @@ function listarPedidos() {
   });
 }
 
+function ActualizarPedido() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolModificarPedido.php",
+    data: {
+      cliente: $("#cliente_Modal").val(),
+      Direccion: $("#DireccionModal").val(),
+      celular: $("#celular_Modal").val(),
+      idPedido: $("#idPedido").val(),
+    },
+    success: function (data) {
+      $("#ModificarPedido").modal("hide");
+      alert(data);
+      $("#cliente_Modal").val(),
+        $("#DireccionModal").val(),
+        $("#celular").val(),
+        $("#idPedido").val(),
+        listarPedidos();
+    },
+  });
+}
+
+function BuscarPedido(idPedido) {
+  $("#ModificarPedido").modal("show");
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolBuscarPedido.php",
+    data: {
+      idPedido: idPedido,
+    },
+    success: function (data) {
+      $("#bodyModificarPedido").text("");
+      $("#bodyModificarPedido").append(data);
+      listarTipoProductos();
+      listarclientes();
+    },
+  });
+}
+
+function DetallePedido(idPedido) {
+  $("#DetallePedido").modal("show");
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolDetallePedido.php",
+    data: {
+      idPedido: idPedido,
+    },
+    success: function (data) {
+      $("#formAgregarProducto").text("");
+      $("#formAgregarProducto").append(data);
+      listadoProductos();
+    },
+  });
+}
+
+function listarDetallePedido(idPedido) {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolListadoDetallePedido.php",
+    data: {
+      idPedido: idPedido,
+    },
+    success: function (data) {
+      $("#tablaListadoProductos").text("");
+      $("#tablaListadoProductos").append(data);
+      listarPedidos();
+    },
+  });
+}
+
+function listarclientes() {
+  $.ajax({
+    type: "GET",
+    url: "../../../VSA/Controlador/CtrolListarClientes.php",
+    data: {},
+    success: function (data) {
+      let select = document.querySelector("#cliente_Modal");
+      $("#cliente_Modal").text("");
+      $("#cliente_Modal").append(data);
+      if (select.dataset.valueid !== "") {
+        select.value = select.dataset.valueid;
+      }
+    },
+  });
+}
+
+function listadoProductos() {
+  $.ajax({
+    type: "GET",
+    url: "../../../VSA/Controlador/CtrolListadoProductos.php",
+    data: {},
+    success: function (data) {
+      let select = document.querySelector("#Producto_Modal");
+      $("#Producto_Modal").text("");
+      $("#Producto_Modal").append(data);
+      if (select.dataset.valueid !== "") {
+        select.value = select.dataset.valueid;
+      }
+    },
+  });
+}
+
+function listarTipoProductos() {
+  $.ajax({
+    type: "GET",
+    url: "../../../VSA/Controlador/CtrolListarTipoProductos.php",
+    data: {},
+    success: function (data) {
+      let select = document.querySelector("#tipo_producto");
+      $("#tipo_producto").text("");
+      $("#tipo_producto").append(data);
+      $("#tipo_producto_Modal").text("");
+      $("#tipo_producto_Modal").append(data);
+      if (select.dataset.valueid !== "") {
+        select.value = select.dataset.valueid;
+      }
+    },
+  });
+}
+
+function AgregarProducto(idPedido) {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolAgregarProducto.php",
+    data: {
+      idPedido: idPedido,
+      idProducto: $("#Producto_Modal").val(),
+      Cantidad: $("#CantidadModal").val(),
+    },
+    success: function (data) {
+      alert(data);
+      $("#Producto_Modal").val(""), $("#CantidadModal").val("");
+      listarDetallePedido(idPedido);
+    },
+  });
+}
+
 function guardarCitas() {
   $.ajax({
     type: "POST",
@@ -221,45 +379,6 @@ function listarCitas() {
     success: function (data) {
       $("tbody").text("");
       $("tbody").append(data);
-    },
-  });
-}
-
-function listarTipoProductos() {
-  $.ajax({
-    type: "GET",
-    url: "../../../VSA/Controlador/CtrolListarTipoProductos.php",
-    data: {},
-    success: function (data) {
-      let select = document.querySelector("#tipo_producto");
-      $("#tipo_producto").text("");
-      $("#tipo_producto").append(data);
-      $("#tipo_producto_Modal").text("");
-      $("#tipo_producto_Modal").append(data);
-      if (select.dataset.valueid !== "") {
-        select.value = select.dataset.valueid;
-      }
-    },
-  });
-}
-
-function actualizarProducto() {
-  $.ajax({
-    type: "POST",
-    url: "../../../VSA/Controlador/CtrolModificarProductos.php",
-    data: {
-      nombre: $("#nombreModal").val(),
-      Precio: $("#PrecioModal").val(),
-      idTipoProducto: $("#tipo_producto").val(),
-      idProducto: $("#idProducto").val(),
-    },
-    success: function (data) {
-      $("#ModificarProducto").modal("hide");
-      alert(data);
-      $("#nombre").val(),
-        $("#Precio").val(),
-        $("#tipo_producto").val(),
-        listarProductos();
     },
   });
 }

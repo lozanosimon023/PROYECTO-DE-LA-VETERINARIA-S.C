@@ -185,9 +185,9 @@ function guardarPedidos() {
     type: "POST",
     url: "../../../VSA/Controlador/CtrolPedidos.php",
     data: {
-      direccion: $("#direccion").val(),
+      cliente: $("#clientePedido").val(),
       celular: $("#celular").val(),
-      total: $("#total").val(),
+      direccion: $("#direccion").val(),
     },
     success: function (data) {
       alert(data);
@@ -312,6 +312,18 @@ function listarclientes() {
   });
 }
 
+function listarClientesPrincipal(idSelect) {
+  $.ajax({
+    type: "GET",
+    url: "../../../VSA/Controlador/CtrolListarClientes.php",
+    data: {},
+    success: function (data) {
+      $(idSelect).text("");
+      $(idSelect).append(data);
+    },
+  });
+}
+
 function listadoProductos() {
   $.ajax({
     type: "GET",
@@ -368,8 +380,8 @@ function guardarCitas() {
     type: "POST",
     url: "../../../VSA/Controlador/CtrolCitas.php",
     data: {
+      Cliente: $("#clienteCita").val(),
       Paciente: $("#paciente").val(),
-      Cliente: $("#cliente").val(),
       TipoConsulta: $("#tipoConsulta").val(),
       Fecha_Hora: $("#Fecha").val(),
     },
@@ -392,6 +404,30 @@ function listarCitas() {
     success: function (data) {
       $("tbody").text("");
       $("tbody").append(data);
+    },
+  });
+}
+
+function listarPacientes() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolListarPacientes.php",
+    data: {},
+    success: function (data) {
+      $("#paciente").text("");
+      $("#paciente").append(data);
+    },
+  });
+}
+
+function listarTipoConsulta() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolListarTipoConsulta.php",
+    data: {},
+    success: function (data) {
+      $("#tipoConsulta").text("");
+      $("#tipoConsulta").append(data);
     },
   });
 }

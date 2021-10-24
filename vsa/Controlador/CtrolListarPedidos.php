@@ -5,7 +5,7 @@ $conexion = new PDODB();
 $conexion->connect();
 
 $consulta = "SELECT p.idPedido AS idPedido, cl.Nombre AS Cliente, Direccion, p.Celular AS Celular, 
-(SELECT SUM(Subtotal) FROM `tbl_detalle_pedido` where idPedido=p.idPedido) AS Total
+IFNULL((SELECT SUM(Subtotal) FROM `tbl_detalle_pedido` where idPedido=p.idPedido),0) AS Total
 FROM `tbl_pedido` p 
 INNER JOIN tbl_cliente cl on p.idCliente = cl.idCliente";
 $listado = $conexion->executeInstruction($consulta);

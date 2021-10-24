@@ -24,6 +24,7 @@ foreach ($listado as $key => $value) {
                     <input type="number" class="form-control" name="CantidadModal" id="CantidadModal">
                 </div>
                 <div class="col-4">
+                    <label class="text-white">btnAgregarProducto</label>
                     <input class="btn btn-success btn-block" type="button" value="Agregar" onclick="AgregarProducto(' . $value['idPedido'] . ')">             
                 </div>
             </div>

@@ -1,17 +1,17 @@
 <?php
 require_once '../Modelo/conexion.php';
 
-//$cliente = $_POST['cliente'];
-$direccion = $_POST['direccion'];
+$cliente = $_POST['cliente'];
 $celular = $_POST['celular'];
-$total = $_POST['total'];
+$direccion = $_POST['direccion'];
+$total = 0;
 
 $conexion = new PDODB();
 
 $conexion->connect();
 
 $InstruccionSQL = "INSERT INTO `tbl_pedido`(`idPedido`, `idCliente`, `Direccion`, `Celular`, `Total`) VALUES
-    (null, 1,'" . $direccion . "', '" . $celular . "','" . $total . "');";
+    (null, '" . $cliente . "','" . $direccion . "', '" . $celular . "','" . $total . "');";
 
 $resultado = $conexion->executeInstruction($InstruccionSQL);
 if ($resultado == true) {

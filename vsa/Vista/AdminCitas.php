@@ -8,28 +8,35 @@
       <div class="row">
         <div class="col">
           <div class="form-group row">
-            <div class="col-6">
-              <label for="Nombres">Nombres del paciente</label>
-              <input type="text" class="form-control" id="paciente" name="paciente">
-            </div>
-            <div class="col-6">
-              <label for="NombreAcompañante">Nombre del cliente</label>
-              <input type="text" class="form-control" id="cliente" name="cliente">
-            </div>
-
-          </div>
-          <div class="form-group row">
-            <div class="form-group col-md-6">
-              <label aria-placeholder="inputState">Tipo de Consulta </label>
-              <select id="tipoConsulta" class="form-control">
-                <option selected disabled></option>
-                <option>3</option>
-                <option>Profilaxis</option>
-                <option>Vacunación</option>
-                <option>Ecografia</option>
+            <div class="col-4">
+              <label for="NombreAcompañante">Cliente</label>
+              <select id="clienteCita" name="clienteCita" class="form-control">
+                <option value=""></option>
               </select>
             </div>
-            <div class="form-group col-md-6">
+            <div class="col-1">
+              <label class="text-light">btnAgregarCliente</label>
+              <button class="btn btn-success btn-block">Agregar</button>
+            </div>
+            <div class="col-4 offset-1">
+              <label for="Nombres">Paciente</label>
+              <select id="paciente" name="paciente" class="form-control">
+                <option value=""></option>
+              </select>
+            </div>
+            <div class="col-1">
+              <label class="text-light">btnAgregarPaciente</label>
+              <button class="btn btn-success btn-block">Agregar</button>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="form-group col-md-5">
+              <label aria-placeholder="inputState">Tipo de Consulta </label>
+              <select id="tipoConsulta" class="form-control">
+              </select>
+            </div>
+            <div class="form-group col-md-5 offset-1">
               <label for="Fecha-Hora">Fecha-Hora</label>
               <input type="datetime-local" class="form-control" id="Fecha" name="Fecha">
             </div>
@@ -37,7 +44,7 @@
         </div>
       </div>
       <div>
-        <a class="btn btn-primary mt-3" onclick="guardarCitas()">Guardar</a>
+        <a class="btn btn-primary mb-3" onclick="guardarCitas()">Guardar</a>
       </div>
     </div>
 
@@ -65,6 +72,9 @@
 </section>
 <script>
   $(document).ready(function() {
+    listarClientesPrincipal("#clienteCita");
+    listarPacientes();
+    listarTipoConsulta()
     listarCitas();
   });
 </script>

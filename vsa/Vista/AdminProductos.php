@@ -21,7 +21,7 @@
           <div class="row">
             <div class="col">
               <label for="Apeliidos">Tipo Producto</label>
-              <select name="tipo_producto_Modal" id="tipo_producto_Modal" class="form-control">
+              <select name="tipo_producto" id="tipo_producto" class="form-control">
                 <option value=""></option>
               </select>
             </div>

@@ -127,7 +127,7 @@ function guardarProductos() {
       $("#nombre").val("");
       $("#precio").val("");
       $("#tipo_producto").val();
-      listarPedidos();
+      listarProductos();
     },
   });
 }
@@ -168,7 +168,6 @@ function actualizarProducto() {
       nombre: $("#nombreModal").val(),
       Precio: $("#PrecioModal").val(),
       idTipoProducto: $("#tipo_producto").val(),
-      idProducto: $("#idProducto").val(),
     },
     success: function (data) {
       $("#ModificarProducto").modal("hide");

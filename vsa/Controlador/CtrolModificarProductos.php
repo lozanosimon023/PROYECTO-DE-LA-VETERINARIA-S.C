@@ -14,6 +14,8 @@ $InstruccionSQL = "UPDATE `tbl_productos`
                     `Precio` =  $Precio ,
                     `idTipoProducto` =  $Tipo 
                     WHERE `idProducto` =  $idProducto ;";
+
+
 $resultado = $conexion->executeInstruction($InstruccionSQL);
 
 if ($resultado == true) {

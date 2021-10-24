@@ -14,7 +14,7 @@ $listado = $conexion->executeInstruction($consulta);
 foreach ($listado as $key => $value) {
     echo '<div class="row">
             <div class="col">     
-                <input type="hidden" id="idProducto" name="idProducto" value="' . $value['idProducto'] . '">   
+                <input type="hidden" id="idProducto_Modal" name="idProducto_Modal" value="' . $value['idProducto'] . '">   
                 <div class="form group row">
                     <div class="col-6">
                         <label for="nombre">Nombre</label>
@@ -26,7 +26,7 @@ foreach ($listado as $key => $value) {
                     </div>
                     <div class="col-6">
                         <label for="Tipo">Tipo</label>
-                        <select name="tipo_producto" id="tipo_producto" class="form-control" data-valueid="' . $value['idTipoProducto'] . '">                                            
+                        <select name="tipo_producto_Modal" id="tipo_producto_Modal" class="form-control" data-valueid="' . $value['idTipoProducto'] . '">                                            
                         </select>
                     </div>                
                 </div>

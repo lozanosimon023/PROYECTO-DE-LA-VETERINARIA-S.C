@@ -163,16 +163,17 @@ function actualizarProducto() {
     type: "POST",
     url: "../../../VSA/Controlador/CtrolModificarProductos.php",
     data: {
+      idProducto: $("#idProducto_Modal").val(),
       nombre: $("#nombreModal").val(),
       Precio: $("#PrecioModal").val(),
-      idTipoProducto: $("#tipo_producto").val(),
+      idTipoProducto: $("#tipo_producto_Modal").val(),
     },
     success: function (data) {
       $("#ModificarProducto").modal("hide");
       alert(data);
       $("#nombre").val(),
         $("#Precio").val(),
-        $("#tipo_producto").val(),
+        $("#tipo_producto_Modal").val(),
         listarProductos();
     },
   });
@@ -349,12 +350,16 @@ function listarTipoProductos() {
     data: {},
     success: function (data) {
       let select = document.querySelector("#tipo_producto");
+      let selectModal = document.querySelector("#tipo_producto_Modal");
       $("#tipo_producto").text("");
       $("#tipo_producto").append(data);
       $("#tipo_producto_Modal").text("");
       $("#tipo_producto_Modal").append(data);
       if (select.dataset.valueid !== "") {
         select.value = select.dataset.valueid;
+      }
+      if (selectModal.dataset.valueid !== "") {
+        selectModal.value = selectModal.dataset.valueid;
       }
     },
   });

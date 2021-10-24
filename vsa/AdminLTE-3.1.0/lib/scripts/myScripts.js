@@ -396,6 +396,20 @@ function guardarCitas() {
   });
 }
 
+function eliminarCita(idCita) {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolEliminarCita.php",
+    data: {
+      idCita: idCita,
+    },
+    success: function (data) {
+      alert(data);
+      listarCitas();
+    },
+  });
+}
+
 function listarCitas() {
   $.ajax({
     type: "POST",

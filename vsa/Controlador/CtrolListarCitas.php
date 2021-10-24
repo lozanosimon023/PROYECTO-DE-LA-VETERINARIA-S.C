@@ -20,7 +20,7 @@ foreach ($listado as $key => $value) {
             <td scope="col">' . $value['cliente'] . '</td>
             <td scope="col">' . $value['tipo'] . '</td>
             <td scope="col">' . $value['fecha'] . '</td>
-            <td scope="col"><input class="btn btn-danger" type="button" value="Eliminar" onclick="eliminaCita(' . $value['id'] . ')"></td>
+            <td scope="col"><input class="btn btn-danger" type="button" value="Eliminar" onclick="eliminarCita(' . $value['id'] . ')"></td>
             <td scope="col"><input class="btn btn-warning" type="button" value="Modificar" onclick="buscaCita(' . $value['id'] . ')"></td>
         </tr>';
 }

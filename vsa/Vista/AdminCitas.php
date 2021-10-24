@@ -16,7 +16,7 @@
             </div>
             <div class="col-1">
               <label class="text-light">btnAgregarCliente</label>
-              <button class="btn btn-success btn-block">Agregar</button>
+              <button class="btn btn-success btn-block" onclick="AgregarCliente()">Agregar</button>
             </div>
             <div class="col-4 offset-1">
               <label for="Nombres">Paciente</label>
@@ -26,7 +26,7 @@
             </div>
             <div class="col-1">
               <label class="text-light">btnAgregarPaciente</label>
-              <button class="btn btn-success btn-block">Agregar</button>
+              <button class="btn btn-success btn-block" onclick="AgregarPaciente()">Agregar</button>
             </div>
           </div>
 
@@ -70,6 +70,128 @@
   </section>
   </div>
 </section>
+
+<!-- Modal del ModificarCitas -->
+<div class="modal fade" id="ModificarCita" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Actualizar Cita</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="bodyModificarCita">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="actualizarCita()">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal del Crear cliente -->
+<div class="modal fade" id="CreartCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear Cliente</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="bodyModificarCita">
+        <div class="row">
+          <div class="col">
+            <form id="frmajax" method="POST">
+              <div class="form-group row">
+                <div class="col-6">
+                  <label for="Nombres">Nombres</label>
+                  <input type="text" class="form-control" id="nombres" name="nombres" required>
+                </div>
+                <div class="col-6">
+                  <label for="Apeliidos">Celular</label>
+                  <input type="number" class="form-control" id="celular" name="celular" required>
+                </div>
+
+              </div>
+              <div class="form-group row">
+                <div class="col-6">
+                  <label for="CorreoElectronico">Correo Electronico</label>
+                  <input type="text" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="col-6">
+                  <label for="contrasena">Contraseña</label>
+                  <input type="text" class="form-control" id="contrasena" name="contrasena" required>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarCliente()">Crear</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal del Crear paciente -->
+<div class="modal fade" id="CrearPaciente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear Paciente</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="bodyModificarCita">
+        <div class="row">
+          <div class="col">
+            <form id="frmajax" method="POST">
+              <div class="form-group row">
+                <div class="col-6">
+                  <label for="Nombres">Cliente</label>
+                  <select id="clientePaciente" name="clientePaciente" class="form-control">
+                  </select>
+                </div>
+                <div class="col-6">
+                  <label for="nombrePaciente">Nombre Paciente</label>
+                  <input type="text" class="form-control" id="nombrePaciente" name="nombrePaciente" required>
+                </div>
+
+              </div>
+              <div class="form-group row">
+                <div class="col-6">
+                  <label for="Edad">Edad</label>
+                  <input type="number" class="form-control" id="edadPaciente" name="edadPaciente" required>
+                </div>
+                <div class="col-6">
+                  <label for="sexo">Sexo</label>
+                  <select id="sexoPaciente" name="sexoPaciente" class="form-control">
+                    <option value="" selected disabled></option>
+                    <option value="Hembra">Hembra</option>
+                    <option value="Macho">Macho</option>
+                    <option value="No especificado">No especificado</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarPaciente()">Crear</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   $(document).ready(function() {
     listarClientesPrincipal("#clienteCita");

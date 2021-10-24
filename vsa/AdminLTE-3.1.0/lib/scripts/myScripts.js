@@ -17,7 +17,6 @@ function guardarUsuarios() {
       nombres: $("#nombres").val(),
       apellidos: $("#apellidos").val(),
       email: $("#email").val(),
-      edad: $("#edad").val(),
       cel: $("#cel").val(),
       contrasena: $("#contrasena").val(),
     },
@@ -26,7 +25,6 @@ function guardarUsuarios() {
       $("#nombres").val("");
       $("#apellidos").val("");
       $("#email").val("");
-      $("#edad").val("");
       $("#cel").val("");
       $("#contrasena").val("");
       listarUsuarios();
@@ -320,6 +318,10 @@ function listarClientesPrincipal(idSelect) {
     success: function (data) {
       $(idSelect).text("");
       $(idSelect).append(data);
+      let select = document.querySelector(idSelect);
+      if (select.dataset.valueid !== "") {
+        select.value = select.dataset.valueid;
+      }
     },
   });
 }
@@ -387,8 +389,10 @@ function guardarCitas() {
     },
     success: function (data) {
       alert(data);
+      // let select = document.querySelector("#clienteCita");
+      // select.dataset.valueid = "";
       $("#paciente").val(""),
-        $("#cliente").val(""),
+        $("#clienteCita").val(""),
         $("#tipoConsulta").val(""),
         $("#fecha").val("");
       listarCitas();
@@ -405,6 +409,49 @@ function eliminarCita(idCita) {
     },
     success: function (data) {
       alert(data);
+      listarCitas();
+    },
+  });
+}
+
+function buscarCita(idCita) {
+  $("#ModificarCita").modal("show");
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolBuscarCita.php",
+    data: {
+      idCita: idCita,
+    },
+    success: function (data) {
+      $("#bodyModificarCita").text("");
+      $("#bodyModificarCita").append(data);
+      listarClientesPrincipal("#clienteCita_Modal");
+      listarPacientes();
+      listarTipoConsulta();
+    },
+  });
+}
+
+function actualizarCita() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolModificarCita.php",
+    data: {
+      idCita: $("#idCita").val(),
+      cliente: $("#clienteCita_Modal").val(),
+      paciente: $("#paciente_Modal").val(),
+      tipoConsulta: $("#tipoConsulta_Modal").val(),
+      fecha: $("#Fecha_Modal").val(),
+    },
+    success: function (data) {
+      $("#ModificarCita").modal("hide");
+      alert(data);
+      $("#idCita").val("");
+      $("#clienteCita_Modal").val("");
+      $("#paciente_Modal").val("");
+      $("#tipoConsulta_Modal").val("");
+      $("#Fecha_Modal").val("");
+
       listarCitas();
     },
   });
@@ -430,6 +477,13 @@ function listarPacientes() {
     success: function (data) {
       $("#paciente").text("");
       $("#paciente").append(data);
+      $("#paciente_Modal").text("");
+      $("#paciente_Modal").append(data);
+
+      let select = document.querySelector("#paciente_Modal");
+      if (select.dataset.valueid !== "") {
+        select.value = select.dataset.valueid;
+      }
     },
   });
 }
@@ -442,6 +496,66 @@ function listarTipoConsulta() {
     success: function (data) {
       $("#tipoConsulta").text("");
       $("#tipoConsulta").append(data);
+      $("#tipoConsulta_Modal").text("");
+      $("#tipoConsulta_Modal").append(data);
+
+      let select = document.querySelector("#tipoConsulta_Modal");
+      if (select.dataset.valueid !== "") {
+        select.value = select.dataset.valueid;
+      }
+    },
+  });
+}
+
+function AgregarCliente() {
+  $("#CreartCliente").modal("show");
+}
+
+function guardarCliente() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolAgregarCliente.php",
+    data: {
+      nombres: $("#nombres").val(),
+      celular: $("#celular").val(),
+      email: $("#email").val(),
+      contrasena: $("#contrasena").val(),
+    },
+    success: function (data) {
+      $("#CreartCliente").modal("hide");
+      listarClientesPrincipal("#clienteCita");
+      alert(data);
+      $("#nombres").val("");
+      $("#celular").val("");
+      $("#email").val("");
+      $("#contrasena").val("");
+    },
+  });
+}
+
+function AgregarPaciente() {
+  listarClientesPrincipal("#clientePaciente");
+  $("#CrearPaciente").modal("show");
+}
+
+function guardarPaciente() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolAgregarPaciente.php",
+    data: {
+      paciente: $("#nombrePaciente").val(),
+      cliente: $("#clientePaciente").val(),
+      edad: $("#edadPaciente").val(),
+      sexo: $("#sexoPaciente").val(),
+    },
+    success: function (data) {
+      $("#CrearPaciente").modal("hide");
+      listarPacientes();
+      alert(data);
+      $("#clientePaciente").val("");
+      $("#nombrePaciente").val("");
+      $("#edadPaciente").val("");
+      $("#sexoPaciente").val("");
     },
   });
 }

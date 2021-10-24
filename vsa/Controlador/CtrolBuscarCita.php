@@ -12,7 +12,6 @@ $listado = $conexion->executeInstruction($consulta);
 foreach ($listado as $key => $value) {
     echo '
     <input type="hidden" id="idCita" name="idCita" value="' . $value['idCitas'] . '">   
-    <input id="idCitaFecha" name="idCitaFecha" value="' . date("c", strtotime($value['Fecha_Hora'])) . '">   
     <div class="row">
         <div class="col">     
             <div class="form-group row">
@@ -37,7 +36,7 @@ foreach ($listado as $key => $value) {
                 </div>
                 <div class="form-group col-md-6">
                     <label for="Fecha-Hora">Fecha-Hora</label>
-                    <input type="datetime-local" class="form-control" id="Fecha_Modal" name="Fecha_Modal" value=date"' . $value['Fecha_Hora'] . '">
+                    <input type="date" class="form-control" id="Fecha_Modal" name="Fecha_Modal" value="' . $value['Fecha_Hora'] . '">
                 </div>
             </div>
         </div>

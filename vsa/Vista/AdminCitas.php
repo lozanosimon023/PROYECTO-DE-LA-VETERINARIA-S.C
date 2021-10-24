@@ -11,7 +11,6 @@
             <div class="col-4">
               <label for="NombreAcompañante">Cliente</label>
               <select id="clienteCita" name="clienteCita" class="form-control">
-                <option value=""></option>
               </select>
             </div>
             <div class="col-1">
@@ -21,7 +20,6 @@
             <div class="col-4 offset-1">
               <label for="Nombres">Paciente</label>
               <select id="paciente" name="paciente" class="form-control">
-                <option value=""></option>
               </select>
             </div>
             <div class="col-1">
@@ -37,8 +35,8 @@
               </select>
             </div>
             <div class="form-group col-md-5 offset-1">
-              <label for="Fecha-Hora">Fecha-Hora</label>
-              <input type="datetime-local" class="form-control" id="Fecha" name="Fecha">
+              <label for="Fecha">Fecha</label>
+              <input type="date" class="form-control" id="Fecha" name="Fecha">
             </div>
           </div>
         </div>

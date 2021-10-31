@@ -13,6 +13,7 @@ foreach ($listado as $key => $value) {
     echo '<div class="row">
             <div class="col">     
                 <input type="hidden" id="idPedido" name="idPedido" value="' . $value['idPedido'] . '">   
+                <label class="text-center">Pedido # '. $value['idPedido'] .'</label>
                 <div class="form group row">
                     <div class="col-6">
                         <label for="nombre">Nombre</label>

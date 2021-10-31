@@ -12,6 +12,7 @@ $listado = $conexion->executeInstruction($consulta);
 foreach ($listado as $key => $value) {
     echo '
     <input type="hidden" id="idCita" name="idCita" value="' . $value['idCitas'] . '">   
+    <label class="text-center">Cita # '. $value['idCitas'] .'</label>
     <div class="row">
         <div class="col">     
             <div class="form-group row">

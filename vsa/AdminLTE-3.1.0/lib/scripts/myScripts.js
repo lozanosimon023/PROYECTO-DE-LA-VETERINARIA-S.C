@@ -259,7 +259,7 @@ function BuscarPedido(idPedido) {
       $("#bodyModificarPedido").text("");
       $("#bodyModificarPedido").append(data);
       listarTipoProductos();
-      listarclientes();
+      listarClientesPrincipal("#cliente_Modal");
     },
   });
 }
@@ -291,22 +291,6 @@ function listarDetallePedido(idPedido) {
     success: function (data) {
       $("#tablaListadoProductos").text("");
       $("#tablaListadoProductos").append(data);
-    },
-  });
-}
-
-function listarclientes() {
-  $.ajax({
-    type: "GET",
-    url: "../../../VSA/Controlador/CtrolListarClientes.php",
-    data: {},
-    success: function (data) {
-      let select = document.querySelector("#cliente_Modal");
-      $("#cliente_Modal").text("");
-      $("#cliente_Modal").append(data);
-      if (select.dataset.valueid !== "") {
-        select.value = select.dataset.valueid;
-      }
     },
   });
 }

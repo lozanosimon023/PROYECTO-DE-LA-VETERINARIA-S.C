@@ -60,19 +60,18 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <a href="index.html" class="logo mr-auto"><img src="https://scontent.feoh4-1.fna.fbcdn.net/v/t31.0-8/p960x960/20543977_132575797347175_4666686904796418138_o.jpg?_nc_cat=103&ccb=2&_nc_sid=85a577&_nc_ohc=6r-udjXBpuIAX8sOIqJ&_nc_ht=scontent.feoh4-1.fna&tp=6&oh=7f7a107d6cc44967a99636c8e05e3f2e&oe=5FD2DBDC" alt=""></a>
+      <a href="index.php" class="logo mr-auto"><img src="https://scontent.feoh4-1.fna.fbcdn.net/v/t31.0-8/p960x960/20543977_132575797347175_4666686904796418138_o.jpg?_nc_cat=103&ccb=2&_nc_sid=85a577&_nc_ohc=6r-udjXBpuIAX8sOIqJ&_nc_ht=scontent.feoh4-1.fna&tp=6&oh=7f7a107d6cc44967a99636c8e05e3f2e&oe=5FD2DBDC" alt=""></a>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <h1 class="logo mr-auto"><a href="index.html">Medicio</a></h1> -->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Inicio</a></li>
+          <li class="active"><a href="#hero">Inicio</a></li>
           <li><a href="#Productos">Venta de Productos</a></li>
           <li><a href="#Servicios">Servicios</a></li>
           <li><a href="#Citas">Agendar Citas</a></li>
           <li><a href="#Contactenos">Contactenos</a></li>
           <li><a href="#Ubicación">Ubicación</a></li>
-          <li><a href="#Testimonios">Testimonios</a></li>
           <!-- <li class="drop-down"><a href="">Drop Down</a>
           <ul>
             <li><a href="#">Drop Down 1</a></li>
@@ -514,82 +513,7 @@
 
       </div>
 
-      <!-- ======= Testimonials Section ======= -->
-      <section id="Testimonios" class="testimonials">
-        <div class="container" data-aos="fade-up">
-
-          <div class="section-title">
-            <h2>Testimonios</h2>
-            <p>Acá se podran visaulizar los testimonios que deseen dar nuestros clientes</p>
-          </div>
-
-          <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
-                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="../Modelo/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-              <h3>Saul Goodman</h3>
-              <h4>Ceo &amp; Founder</h4>
-            </div>
-
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
-                quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="../Modelo/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-              <h3>Sara Wilsson</h3>
-              <h4>Designer</h4>
-            </div>
-
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor
-                labore quem eram duis noster aute amet eram fore quis sint minim.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="../Modelo/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-              <h3>Jena Karlis</h3>
-              <h4>Store Owner</h4>
-            </div>
-
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim
-                dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="../Modelo/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-              <h3>Matt Brandon</h3>
-              <h4>Freelancer</h4>
-            </div>
-
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
-                labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="../Modelo/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-              <h3>John Larson</h3>
-              <h4>Entrepreneur</h4>
-            </div>
-
-          </div>
-
-        </div>
-      </section><!-- End Testimonials Section -->
-
+      
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -630,25 +554,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Servicios</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
+       
 
         </div>
       </div>

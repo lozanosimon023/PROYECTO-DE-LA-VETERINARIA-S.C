@@ -113,6 +113,12 @@ session_start();
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a href="#" class="nav-link" onclick="cargar('AdminClientes.php');">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Clientes</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <!---Perfil-->
                   <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-chart-pie"></i>

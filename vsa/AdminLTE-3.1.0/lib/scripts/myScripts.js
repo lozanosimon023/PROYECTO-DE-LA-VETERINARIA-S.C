@@ -111,6 +111,27 @@ function listarUsuarios() {
   });
 }
 
+function guardarCliente() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtroClientes.php",
+    data: {
+      nombres: $("#nombres").val(),
+      celular: $("#celular").val(),
+      email: $("#email").val(),
+      contrasena: $("#contrasena").val(),
+    },
+    success: function (data) {
+      alert(data);
+      $("#nombres").val("");
+      $("#celular").val("");
+      $("#email").val("");
+      $("#contrasena").val("");
+      listarUsuarios();
+    },
+  });
+}
+
 function guardarProductos() {
   $.ajax({
     type: "POST",

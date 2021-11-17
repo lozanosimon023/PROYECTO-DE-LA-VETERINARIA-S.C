@@ -10,7 +10,7 @@ $conexion = new PDODB();
 
 $conexion->connect();
 
-$InstruccionSQL = "INSERT INTO `tbl_cliente`(`id`, `Nombre`, `Celular`, `Correo`, `Contrasena`) VALUES
+$InstruccionSQL = "INSERT INTO `tbl_cliente`(`idCliente`, `Nombre`, `Celular`, `Correo`, `Contrasena`) VALUES
     (null,'" . $nombres . "', '" . $celular . "', '" . $email . "','" . $contrasena . "');";
 
 $resultado = $conexion->executeInstruction($InstruccionSQL);

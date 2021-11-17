@@ -111,10 +111,10 @@ function listarUsuarios() {
   });
 }
 
-function guardarCliente() {
+function guardarClientes() {
   $.ajax({
     type: "POST",
-    url: "../../../VSA/Controlador/CtroClientes.php",
+    url: "../../../VSA/Controlador/CtrolClientes.php",
     data: {
       nombres: $("#nombres").val(),
       celular: $("#celular").val(),
@@ -127,7 +127,33 @@ function guardarCliente() {
       $("#celular").val("");
       $("#email").val("");
       $("#contrasena").val("");
-      listarUsuarios();
+      listarCliente();
+    },
+  });
+}
+
+function eliminarCliente(idCliente) {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolEliminarClientes.php",
+    data: {
+      idCliente: idCliente,
+    },
+    success: function (data) {
+      alert(data);
+      listarCliente();
+    },
+  });
+}
+
+function listarCliente() {
+  $.ajax({
+    type: "POST",
+    url: "../../../VSA/Controlador/CtrolListarCliente.php",
+    data: {},
+    success: function (data) {
+      $("tbody").text("");
+      $("tbody").append(data);
     },
   });
 }

@@ -46,7 +46,6 @@
             <th scope="col">Correo</th>
             <th scope="col">Contraseña</th>
             <th scope="col">Eliminar</th>
-            <th scope="col">Modificar</th>
           </tr>
         </thead>
         <tbody>
@@ -60,6 +59,6 @@
 
 <script>
   $(document).ready(function() {
-    listarUsuarios();
+    listarCliente();
   });
 </script>
